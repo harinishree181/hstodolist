@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HS To-Do List</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>HS To-Do List</h1>
+        <div class="div1">
+        <input id="input">
+        <button onclick="add()" class="btn1">Add</button>
+
+        </div>
+        <ul id="list">
+            <li>Hello 
+                 <button onclick="del(event)">Delete</button>
+            </li>
+        </ul>
+    <script>
+        var inp=document.getElementById("input")
+        var list=document.getElementById("list")
+        function add()
+        {
+            var listitem=document.createElement("li")
+            listitem.innerHTML=inp.value+ "<button onclick='del(event)'>Delete</button>"
+            list.append(listitem)
+        }
+        function del(event)
+        {
+            event.target.parentElement.remove()
+        }
+    </script>
+    </body>
+</html>
